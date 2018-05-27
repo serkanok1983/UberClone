@@ -100,8 +100,8 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
         setTitle("Yakınlardaki Çağrılar");
 
-        requestListView = (ListView) findViewById(R.id.requestListView);
-        mArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, requests);
+        requestListView = findViewById(R.id.requestListView);
+        mArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, requests);
         requests.clear();
         requests.add("En yakın çağrılar alınıyor...");
         requestListView.setAdapter(mArrayAdapter);
@@ -121,7 +121,6 @@ public class ViewRequestsActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-                //mArrayAdapter.notifyDataSetChanged();
             }
         });
 
